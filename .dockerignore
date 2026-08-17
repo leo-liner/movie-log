@@ -1,0 +1,9 @@
+.git
+.gradle
+build/tmp
+build/reports
+.idea
+.env
+.omc
+docs
+*.md
