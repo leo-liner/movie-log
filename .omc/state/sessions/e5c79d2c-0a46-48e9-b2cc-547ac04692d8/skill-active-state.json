@@ -1,0 +1,10 @@
+{
+  "active": true,
+  "skill_name": "writing-plans",
+  "session_id": "e5c79d2c-0a46-48e9-b2cc-547ac04692d8",
+  "started_at": "2026-08-17T11:34:13.469Z",
+  "last_checked_at": "2026-08-17T11:34:13.469Z",
+  "reinforcement_count": 0,
+  "max_reinforcements": 3,
+  "stale_ttl_ms": 300000
+}

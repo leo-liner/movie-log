@@ -37,9 +37,9 @@
 
 | 영역 | 선택 | 비고 |
 |---|---|---|
-| 언어 | Kotlin (JDK 21) | |
-| 프레임워크 | Spring Boot 3.x | |
-| 빌드 | Gradle (Kotlin DSL) | 단일 모듈로 시작 |
+| 언어 | Kotlin (JDK 25 LTS) | |
+| 프레임워크 | Spring Boot 4.1 | Spring Framework 7 기반 |
+| 빌드 | Gradle 9 (Kotlin DSL) | 단일 모듈로 시작 |
 | ORM | Spring Data JPA + Hibernate | N+1과 영속성 컨텍스트 학습이 목적 |
 | 마이그레이션 | Flyway | |
 | DB | PostgreSQL 16 | 컨테이너로 직접 운영 |
