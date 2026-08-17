@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/movielog
+    username: movielog
+    password: movielog
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: true
