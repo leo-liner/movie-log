@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: movie-log
+  jpa:
+    open-in-view: false
+
+build:
+  commit: ${BUILD_COMMIT:unknown}

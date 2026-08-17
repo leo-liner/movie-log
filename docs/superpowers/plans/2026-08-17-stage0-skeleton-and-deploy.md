@@ -21,6 +21,20 @@
 - 애플리케이션 패키지 루트는 `com.movielog`.
 - 커밋 메시지는 한글로 쓰고 Conventional Commits 접두사(`feat:`, `chore:`, `docs:`, `ci:`)를 붙인다.
 
+## 실행 순서 조정 (2026-08-17)
+
+로컬에 Docker를 설치하지 않기로 하여 태스크 순서를 바꾼다.
+
+**1 → 2 → 3 → 7 → 4 → 5 → 6 → 8**
+
+서버가 없어도 CI는 돌릴 수 있으므로 Task 7을 앞으로 당긴다. 1차 목표는 Task 7까지, 즉 GitHub Actions가 테스트를 돌리고 ARM64 이미지를 GHCR에 올리는 것까지다. 서버 준비(Task 4~6)와 자동 배포(Task 8)는 그 뒤에 이어간다.
+
+**로컬에서 되는 것**: 컴파일, `HealthControllerTest`(`@WebMvcTest`라 DataSource를 안 띄운다). Gradle 툴체인이 JDK 25를 자동으로 받는다.
+
+**로컬에서 안 되는 것**: `FlywayMigrationTest`(Testcontainers가 Docker를 요구), 이미지 빌드, `compose.yaml` 기동. 전부 CI에서 확인한다. 해당 스텝의 로컬 검증 지시는 건너뛰고 CI 결과로 대체한다.
+
+Task 6 Step 4(로컬 이미지를 서버로 전송)는 실행하지 않는다. Task 7이 먼저 끝나 GHCR에 이미지가 있으므로, 서버가 그것을 직접 받는다.
+
 ---
 
 ## 파일 구조
